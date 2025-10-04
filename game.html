@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Folder Viewer</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Viewing Folder</h1>
+        <div id="folderViewer">
+            <!-- Iframe will load the folder's content dynamically -->
+            <iframe id="folderIframe" title="Folder Viewer"></iframe>
+            <br>
+            <!-- Button to go directly to the folder -->
+            <button id="goToFolderButton" style="display:none;" onclick="goToFolder()"><img src='full.svg'></button>
+        </div>
+    </div>
+
+    <script>
+        // Function to get the query parameter value by name
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Get the value of 'g' from the URL query string (the folder name)
+        const folderName = getQueryParam('g');
+
+        // If a folder name is provided in the query string, load it into the iframe
+        if (folderName) {
+            const iframe = document.getElementById('folderIframe');
+            // Set the iframe src to point to the folder (adjust according to your folder structure)
+            iframe.src = folderName + '/index.html';  // You can change 'index.html' if necessary
+            // Show the "Go to Folder" button
+            const button = document.getElementById('goToFolderButton');
+            button.style.display = 'inline-block';
+            // Store the folder URL for the button to use
+            button.dataset.folder = folderName;
+        } else {
+            document.body.innerHTML = '<h1>No folder specified in the query string.</h1>';
+        }
+
+        // Function to handle the "Go to Folder" button click
+        function goToFolder() {
+            const folder = document.getElementById('goToFolderButton').dataset.folder;
+            if (folder) {
+                window.location.href = folder;  // Redirect to the folder directly
+            }
+        }
+    </script>
+</body>
+</html>
