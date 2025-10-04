@@ -1,0 +1,62 @@
+body {
+  background: #000;
+  color: #fff;
+  padding: 25px;
+  font-family: sans-serif;
+}
+#bar {
+  background-color: #111;
+  display: flex;         /* flexbox for alignment */
+  align-items: center;   /* vertically center items */
+  justify-content: space-between; /* spreads them out */
+  border-radius: 100px;   /* <- controls how round corners are */
+  padding: 0 10px;
+  position: fixed;      /* stick to top */
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: top 0.3s; /* smooth hide/reveal */
+  z-index: 1000;   
+}
+
+#bar a {
+  color: #fff;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#amogus {
+  display: flex;         /* keeps its child links on one line */
+  gap: 20px;             /* space between “home” and “games” */
+}
+iframe
+ {
+            width: 80%;
+            height: 80%;
+            border: none;
+ }
+         .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: black;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
