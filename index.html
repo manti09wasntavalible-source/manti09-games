@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>09 home</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="bar"> 
+  <a href="https://www.youtube.com/channel/UCk56or89jFmFupYgvydXC8Q" id="yt">
+    <img src="pfp.img">
+  </a>
+  
+  <div id="amogus">
+    <a href="/index.html">home</a>
+    <a href="/games.html">games</a>
+  </div>
+  <div id="discord">
+  <a href="https://discord.gg/TTfZH72wGK" >discord</a>
+  <a href='https://github.com/manti09wasntavalible-source/manti09-games'>github repo</a>
+  </div>
+</div>
+<script>
+let prevScroll = window.scrollY;
+const bar = document.getElementById("bar");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.scrollY;
+  
+  if (currentScroll > prevScroll) {
+    // scrolling down → hide bar
+    bar.style.top = "-80px"; // adjust height if your bar is taller
+  } else {
+    // scrolling up → show bar
+    bar.style.top = "0";
+  }
+  
+  prevScroll = currentScroll;
+});
+</script>
+  
+  <h1>welcome gamers</h1>
+  <p>this is a place where you can find many web games and other things</p>
+  <a href="https://discord.gg/TTfZH72wGK">discord</a>
+</body>
+</html>
