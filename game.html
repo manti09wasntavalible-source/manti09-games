@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="container">
-        <h1>Viewing Folder</h1>
         <div id="folderViewer">
             <!-- Iframe will load the folder's content dynamically -->
             <iframe id="folderIframe" title="Folder Viewer"></iframe>
@@ -27,7 +26,7 @@
 
         // Get the value of 'g' from the URL query string (the folder name)
         const folderName = getQueryParam('g');
-
+        document.body.innerHTML = '<h1>' + folderName + '</h1>';
         // If a folder name is provided in the query string, load it into the iframe
         if (folderName) {
             const iframe = document.getElementById('folderIframe');
